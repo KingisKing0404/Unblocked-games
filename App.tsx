@@ -1,9 +1,9 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
-import { GAMES, CATEGORIES } from './constants';
-import Header from './components/Header';
-import GameCard from './components/GameCard';
-import GamePlayer from './components/GamePlayer';
+import { GAMES, CATEGORIES } from './constants.ts';
+import Header from './components/Header.tsx';
+import GameCard from './components/GameCard.tsx';
+import GamePlayer from './components/GamePlayer.tsx';
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -109,7 +109,6 @@ const App = () => {
         {filteredGames.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {filteredGames.map(game => (
-              // Fix: Added key to GameCard which is now correctly recognized by the updated component definition
               <GameCard 
                 key={game.id} 
                 game={game} 
